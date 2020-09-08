@@ -1,6 +1,16 @@
 document.addEventListener('DOMContentLoaded', function(){
+  const menu_links = document.querySelectorAll(".nav-link");  
+
+  // active links
+  connectActiveSectionsWithLinks(menu_links)
+
+  // smooth
+  addSmoothScrolling(menu_links)
+}, false);
+
+
+function connectActiveSectionsWithLinks(menu_links) {
   const sections = document.querySelectorAll(".resume-section");
-  const menu_links = document.querySelectorAll(".nav-link");
 
   const makeActive = (link) => menu_links[link].classList.add("active-link");
   const removeActive = (link) => menu_links[link].classList.remove("active-link");
@@ -21,26 +31,28 @@ document.addEventListener('DOMContentLoaded', function(){
       makeActive(current);
     }
   });
-  
-  
+}
 
+
+function addSmoothScrolling(menu_links) {
   for (const link of menu_links) {
     link.addEventListener("click", clickHandler);
   }
-
+  
   document.querySelectorAll(".navbar-brand")[0].addEventListener("click", clickHandler);
+}
 
-  function clickHandler(e) {
-    e.preventDefault();
-    const href = this.getAttribute("href");
-    const offsetTop = document.querySelector(href).offsetTop;
+function clickHandler(e) {
+  e.preventDefault();
+  const href = this.getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
 
-    scroll({
-      top: offsetTop,
-      behavior: "smooth"
-    });
-  }
-}, false);
+  scroll({
+    top: offsetTop,
+    behavior: "smooth"
+  });
+}
+
 
 function showNavbar() {
   const showClass = "show-navbar"
