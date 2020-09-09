@@ -15,15 +15,13 @@ function connectActiveSectionsWithLinks(menu_links) {
   const makeActive = (link) => menu_links[link].classList.add("active-link");
   const removeActive = (link) => menu_links[link].classList.remove("active-link");
   const removeAllActive = () => [...Array(sections.length).keys()].forEach((link) => removeActive(link));
-  
-  const sectionMargin = 200;
- 
-  let currentActive = 0;
-  let current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin ) - 1
+   
+  let current = getCurrentSectionIndex(sections);
+  let currentActive = current;
   makeActive(current);
 
   window.addEventListener("scroll", () => {
-    current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin ) - 1
+    current = getCurrentSectionIndex(sections);
 
     if (current !== currentActive) {
       removeAllActive();
@@ -31,6 +29,17 @@ function connectActiveSectionsWithLinks(menu_links) {
       makeActive(current);
     }
   });
+}
+
+function getCurrentSectionIndex(sections) {
+  const sectionMargin = window.innerHeight / 4;
+
+  let findedIndex = 0;
+  if (document.body.offsetHeight - window.scrollY - window.innerHeight > sectionMargin) {
+     findedIndex = [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin);
+  }
+  
+  return sections.length - findedIndex - 1
 }
 
 

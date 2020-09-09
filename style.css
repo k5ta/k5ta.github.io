@@ -79,7 +79,7 @@ h3 {
 }
 
 .resume-date {
-  color: lightskyblue !important;
+  color: #999999 !important;
   text-transform: uppercase;
   font-size: 1.5rem;
 }
@@ -136,7 +136,7 @@ h3 {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: left;
 }
 
 .location {
@@ -152,6 +152,7 @@ h3 {
 .contact-like {
   height: 1.75em;
   width: 1.75em;
+  margin-right: 4rem;
   float: left;
 }
 
@@ -174,17 +175,26 @@ h3 {
 .block-download {
   text-align: center;
   margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .download-link {
   text-decoration: none;
-  color: lightskyblue;
-  opacity: 0.7;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: black;
+  opacity: 0.6;
   transition: 0.25s ease-in-out;
 }
 
 .download-link:hover {
   opacity: 1;
+}
+
+.download-image {
+  max-width: 5rem;
 }
 
 
@@ -261,7 +271,7 @@ h3 {
   color: white;
   text-transform: uppercase;
   text-decoration: none;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .navbar-brand {
@@ -307,7 +317,7 @@ h3 {
     z-index: -1;
     transform: translateY(-150%);
   }
-  99% {
+  100% {
     opacity: 1;
     z-index: 1;
     transform: translateY(0%);
