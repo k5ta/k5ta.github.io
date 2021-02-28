@@ -17,6 +17,15 @@
   }
 }
 
+@keyframes opacityAnimReverse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 body {
   font-family: "Proxima Nova";
   color: #575757;
@@ -206,6 +215,14 @@ h3 {
   max-width: 5rem;
 }
 
+.lang-change {
+  animation: 0.75s ease-in-out 0s opacityAnimReverse;
+  opacity: 0;
+}
+
+body {
+  animation: 1.5s ease-in-out 0s opacityAnim;
+}
 
 #about {
   animation: 1.5s ease-in-out 0s opacityAnim;
@@ -233,10 +250,10 @@ h3 {
 
 
 .navigation {
-  font-weight: bold;
+  font-weight: normal;
   text-transform: uppercase;
   text-align: center;
-  background-color: lightskyblue;
+  background-color: #eefffe;
   animation: 1.5s ease-in-out 0s opacityAnim;
   height: 3.5rem;
   position: fixed;
@@ -262,7 +279,7 @@ h3 {
 
 .nav-text {
   font-size: 1.5rem;
-  color: white;
+  color: black;
   text-transform: uppercase;
   margin-top: 1rem;
   margin-left: 2rem;
@@ -277,10 +294,10 @@ h3 {
 }
 
 .nav-link {
-  color: white;
+  color: black;
   text-transform: uppercase;
   text-decoration: none;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .navbar-brand {
@@ -289,6 +306,7 @@ h3 {
 
 .nav-link:hover, .active-link {
   opacity: 1;
+  font-weight: bold;
 }
 
 .navbar-toggler {
@@ -308,7 +326,7 @@ h3 {
 
 .navbar-collapse {
   width: 100%;
-  background-color: lightskyblue;
+  background-color: #eefffe;
   display: flex;
   align-items: flex-start;
   flex-grow: 0;

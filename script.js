@@ -73,3 +73,39 @@ function showNavbar() {
     navbar.classList.add(showClass);
   }
 }
+
+
+// LANGS
+const RU_LANG = 'ru'
+const EN_LANG = 'en'
+let currentLang = RU_LANG
+
+function changeLang() {
+  document.body.classList.add("lang-change")
+  setTimeout(() => { document.body.classList.remove("lang-change") }, 1000)
+  setTimeout(() => {
+    currentLang = currentLang == RU_LANG ? EN_LANG : RU_LANG
+    changeLangFields(currentLang)
+  }, 750)
+}
+
+function changeLangFields(lang) {
+  properlyDict = lang == RU_LANG ? dictionaryRu : dictionaryEn
+
+  const keys = Object.keys(dictionaryRu)
+  
+  // texts
+  keys.forEach(key => {
+    document.getElementsByName(key).forEach(elem => elem.innerHTML = properlyDict[key])
+  })
+
+  // resume link
+  document.getElementsByName("resume-download").forEach(elem => elem.setAttribute("href", `pdf/tarasov_${lang}.pdf`))
+}
+
+let dictionaryRu = null
+let dictionaryEn = null
+window.onload = () => {
+  fetch("./texts/ru.json").then(resp => resp.json()).then(data => dictionaryRu = data)
+  fetch("./texts/en.json").then(resp => resp.json()).then(data => dictionaryEn = data)
+}

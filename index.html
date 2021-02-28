@@ -15,7 +15,7 @@
 <body>
   <nav class="navigation" id="sideNav">
     <a class="navbar-brand" href="#about">
-      <div class="nav-text">Кирилл Тарасов</div>
+      <div class="nav-text" name="name-surname">Кирилл Тарасов</div>
       <div class="photo-wrapper">
         <img class="photo" src="img/some_photo.jpg" alt="Кирилл Тарасов">
       </div>
@@ -26,22 +26,23 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#about">Обо мне</a>
+          <a class="nav-link" href="#about" name="menu-about">Обо мне</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#education">Образование</a>
+          <a class="nav-link" href="#experience" name="menu-experience">Опыт работы</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#experience">Опыт работы</a>
+          <a class="nav-link" href="#education" name="menu-education">Образование</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#technical">Технические навыки и умения</a>
+          <a class="nav-link" href="#professional" name="menu-professional">Профессиональные навыки</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#personal">Личностные качества и знания</a>
+          <a class="nav-link" href="#additional" name="menu-additional">Другие увлечения</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#additional">Дополнительно</a>
+          <br>
+          <a class="nav-link" onclick="changeLang()" name="menu-lang">English version</a>
         </li>
       </ul>
     </div>
@@ -51,22 +52,19 @@
 
     <section class="resume-section" id="about">
       <div class="section-wrapper">
-        <h1>Кирилл</h1>
-        <h1>Тарасов</h1>
+        <h1 name="name">Кирилл</h1>
+        <h1 name="surname">Тарасов</h1>
         </h1>
         <div class="location">
           <div class="contact-like">
             <img src="svg/location.svg">
           </div>
-          <p class="contact-text">Москва</p>
+          <p class="contact-text" name="city">Россия, Москва</p>
         </div>
-        <div class="resume-text">
-          Руководитель команды разработки приложений для извлечения, обработки, хранения и анализа больших объемов
-          данных.
+        <div class="resume-text" name="about-text">
+          Мой опыт работы в сфере достаточно разнообразен: разработка архитектурных решений и реализация приложений, развертывание и мониторинг, руководство командой и общение с заказчиками.
           <br>
-          Принимаю участие как непосредственно в процессе разработки – обсуждении архитектурных решений, развертывании
-          приложений, настройке систем мониторинга, работе с системами управления конфигурациями, так и в управлении –
-          руководство командой, менторство, общение с заказчиками.
+          Легко осваиваю новый материал и не боюсь нетривиальных задач, ведь именно эти вещи способствуют серьезному росту и развитию.
         </div>
         <div class="contacts center-items">
           <div class="contact-like">
@@ -87,39 +85,19 @@
 
     <hr>
 
-    <section class="resume-section" id="education">
-      <div class="section-wrapper">
-        <h2>Образование</h2>
-        <div class="resume-item">
-          <div class="resume-content">
-            <div class="resume-date">сентябрь 2015 - настоящее время</div>
-            <div class="text-head">Компьютерная безопасность</div>
-            <div class="text-subhead">МГТУ им. Н. Э. Баумана</div>
-            <div class="resume-text">
-              <ul class="skill-list">
-                <li>Обучаюсь на 6 курсе специализации «математические методы защиты информации»</li>
-                <li>Средний балл зачетной книжки — 5.0</li>
-              </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr>
-
     <section class="resume-section" id="experience">
       <div class="section-wrapper">
-        <h2>Опыт работы</h2>
+        <h2 name="menu-experience">Опыт работы</h2>
         <div class="resume-item">
           <div class="resume-content">
-            <div class="resume-date">февраль 2020 — настоящее время</div>
-            <div class="text-head">ИНФОРИОН</div>
-            <div class="text-subhead">Team Lead</div>
+            <div class="resume-date" name="date-4">октябрь 2020 — настоящее время</div>
+            <div class="text-head" name="place-4">Cybertonica</div>
+            <div class="text-subhead" name="position-4">Software Engineer</div>
             <div class="resume-text">
-              <ul class="skill-list">
-                <li>Руководство командой разработки приложений для обработки больших объемов данных</li>
-                <li>Формирование спринтов, приоритизация задач</li>
-                <li>Общение с заказчиками, актуализация требований к продуктам</li>
+              <ul class="skill-list" name="skills-4">
+                <li>Разработка бэкенд части системы фрод-мониторинга, осуществление интеграции клиентов</li>
+                <li>Обмен опытом и обучение других сотрудников</li>
+                <li>Общение со внутренними и внешними заказчиками, другими командами, участие в создании продуктовых задач</li>
               </ul>
             </div>
           </div>
@@ -127,13 +105,28 @@
 
         <div class="resume-item">
           <div class="resume-content">
-            <div class="resume-date">февраль 2018 — февраль 2020</div>
-            <div class="text-head">ИНФОРИОН</div>
-            <div class="text-subhead">Software Engineer</div>
+            <div class="resume-date" name="date-3">февраль 2020 — октябрь 2020</div>
+            <div class="text-head" name="place-3">ИНФОРИОН</div>
+            <div class="text-subhead" name="position-3">Team Lead</div>
             <div class="resume-text">
-              <ul class="skill-list">
-                <li>Разработка, введение в эксплуатацию и поддержка ETL-приложений для получения, обработки и анализа
-                  больших объемов данных</li>
+              <ul class="skill-list" name="skills-3">
+                <li>Руководство командой разработки приложений для обработки больших объемов данных</li>
+                <li>Формирование спринтов и приоритизация задач</li>
+                <li>Общение с заказчиками и актуализация требований к продуктам</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-item">
+          <div class="resume-content">
+            <div class="resume-date" name="date-2">февраль 2018 — февраль 2020</div>
+            <div class="text-head" name="place-2">ИНФОРИОН</div>
+            <div class="text-subhead" name="position-2">Software Engineer</div>
+            <div class="resume-text">
+              <ul class="skill-list" name="skills-2">
+                <li>Разработка, введение в эксплуатацию и поддержка ETL-приложений для получения, обработки и анализа больших объемов данных</li>
+                <li>Реализация исследовательских задач и их дальнейшая интеграция в продукт</li>
                 <li>Проведение тренингов для других членов команды, обучение новых сотрудников</li>
               </ul>
             </div>
@@ -143,11 +136,11 @@
 
         <div class="resume-item">
           <div class="resume-content">
-            <div class="resume-date">июль 2017 — декабрь 2017</div>
-            <div class="text-head">Spacety</div>
-            <div class="text-subhead">Frontend Developer</div>
+            <div class="resume-date" name="date-1">июль 2017 — декабрь 2017</div>
+            <div class="text-head" name="place-1">Spacety</div>
+            <div class="text-subhead" name="position-1">Frontend Developer</div>
             <div class="resume-text">
-              <ul class="skill-list">
+              <ul class="skill-list" name="skills-1">
                 <li>Разработка SPA с использованием фреймворков Vue.js и React</li>
                 <li>Тестирование, поддержка и введение в эксплуатацию сайтов</li>
                 <li>Общение с заказчиками и дизайнерами</li>
@@ -157,24 +150,23 @@
         </div>
       </div>
     </section>
-
+    
     <hr>
 
-    <section class="resume-section" id="technical">
+    <section class="resume-section" id="education">
       <div class="section-wrapper">
-        <h2>Технические навыки и умения</h2>
+        <h2 name="menu-education">Образование</h2>
         <div class="resume-item">
           <div class="resume-content">
+            <div class="resume-date" name="date-education">сентябрь 2015 - настоящее время</div>
+            <div class="text-head" name="place-education">МГТУ им. Н. Э. Баумана</div>
+            <div class="text-subhead" name="position-education">Компьютерная безопасность</div>
             <div class="resume-text">
-              <ul class="skill-list big-list">
-                <li>Scala, Java, Python, JavaScript</li>
-                <li>Elasticsearch, Logstash, Kibana</li>
-                <li>Telegraf, Influx, Chronograf, Kapacitor</li>
-                <li>Puppet, Teamcity</li>
-                <li>Git, Mercurial</li>
-                <li>Redmine, Wekan</li>
+              <ul class="skill-list" name="skills-education">
+                <li>Обучаюсь на 6 курсе специализации «математические методы защиты информации»</li>
+                <li>Средний балл зачетной книжки — 5.0</li>
+                <li>Веду научные исследования в области распознавания изображений</li>
               </ul>
-            </div>
           </div>
         </div>
       </div>
@@ -182,18 +174,22 @@
 
     <hr>
 
-    <section class="resume-section" id="personal">
+    <section class="resume-section" id="professional">
       <div class="section-wrapper">
-        <h2>Личностные качества и знания</h2>
+        <h2 name="menu-professional">Профессиональные навыки</h2>
         <div class="resume-item">
           <div class="resume-content">
             <div class="resume-text">
-              <ul class="skill-list big-list">
+              <ul class="skill-list big-list" name="skills-professional">
+                <li>Scala, Java, Python, JavaScript</li>
+                <li>ELK, TICK, MongoDB, ClickHouse</li>
+                <li>Puppet, Teamcity, Gitlab CI/CD</li>
+                <li>Git, Mercurial</li>
+                <li>Jira, Confluence, Redmine, Wekan</li>
                 <li>Управление командой и умение работать в ней</li>
                 <li>Постановка, декомпозиция и делегирование задач</li>
-                <li>Ведение переговоров, умение слушать и аргументировать свою позицию</li>
-                <li>Нетворкинг и менторство</li>
                 <li>Тайм-менеджмент</li>
+                <li>Ведение переговоров, умение слушать и аргументировать свою позицию</li>
                 <li>Upper-Intermediate English</li>
               </ul>
             </div>
@@ -206,22 +202,21 @@
 
     <section class="resume-section" id="additional">
       <div class="section-wrapper">
-        <h2>Дополнительно</h2>
+        <h2 name="menu-additional">Другие увлечения</h2>
         <div class="resume-item">
           <div class="resume-content">
             <div class="resume-text">
-              <ul class="skill-list big-list">
+              <ul class="skill-list big-list" name="skills-additional">
                 <li>Победитель Добровольного квалификационного экзамена (ДКЭ) в 2019 году</li>
-                <li>Занимаюсь научными исследованиями в области распознавания изображений</li>
-                <li>Интересы – путешествия, литература, различные командные игры, в том числе в качестве ведущего</li>
+                <li>Интересы – экономика, путешествия, различные командные игры, особенно в качестве ведущего</li>
               </ul>
             </div>
           </div>
         </div>
         <div class="block-download">
-          <a class="download-link" href="pdf/tarasov_ru.pdf" target="_blank" download>
+          <a class="download-link" href="pdf/tarasov_ru.pdf" target="_blank" download name="resume-download">
             <img class="download-image" src="svg/document.svg">
-            <br>скачать резюме</a>
+            <br><p name="resume-text">скачать резюме</p></a>
           </div>
       </div>
     </section>
