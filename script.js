@@ -94,8 +94,7 @@ function changeLang(withTimeout = true) {
 }
 
 function changeLangFields(lang) {
-  properlyDict = lang == RU_LANG ? dictionaryRu : dictionaryEn
-
+  const properlyDict = lang == RU_LANG ? dictionaryRu : dictionaryEn
   const keys = Object.keys(properlyDict)
 
   // texts
