@@ -78,22 +78,26 @@ function showNavbar() {
 // LANGS
 const RU_LANG = 'ru'
 const EN_LANG = 'en'
-let currentLang = RU_LANG
 
-function changeLang() {
+let currentLang = RU_LANG
+let dictionaryRu = null
+let dictionaryEn = null
+
+function changeLang(withTimeout = true) {
   document.body.classList.add("lang-change")
-  setTimeout(() => { document.body.classList.remove("lang-change") }, 1000)
+
+  setTimeout(() => { document.body.classList.remove("lang-change") }, withTimeout ? 1000 : 0)
   setTimeout(() => {
     currentLang = currentLang == RU_LANG ? EN_LANG : RU_LANG
     changeLangFields(currentLang)
-  }, 750)
+  }, withTimeout ? 750 : 0)
 }
 
 function changeLangFields(lang) {
   properlyDict = lang == RU_LANG ? dictionaryRu : dictionaryEn
 
-  const keys = Object.keys(dictionaryRu)
-  
+  const keys = Object.keys(properlyDict)
+
   // texts
   keys.forEach(key => {
     document.getElementsByName(key).forEach(elem => elem.innerHTML = properlyDict[key])
@@ -103,9 +107,11 @@ function changeLangFields(lang) {
   document.getElementsByName("resume-download").forEach(elem => elem.setAttribute("href", `pdf/tarasov_${lang}.pdf`))
 }
 
-let dictionaryRu = null
-let dictionaryEn = null
 window.onload = () => {
   fetch("./texts/ru.json").then(resp => resp.json()).then(data => dictionaryRu = data)
   fetch("./texts/en.json").then(resp => resp.json()).then(data => dictionaryEn = data)
+
+  if (navigator.language.substring(0, 2).toLowerCase() != RU_LANG) {
+    changeLang(false)
+  }
 }
