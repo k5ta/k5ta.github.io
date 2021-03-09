@@ -107,10 +107,15 @@ function changeLangFields(lang) {
 }
 
 window.onload = () => {
-  fetch("./texts/ru.json").then(resp => resp.json()).then(data => dictionaryRu = data)
-  fetch("./texts/en.json").then(resp => resp.json()).then(data => dictionaryEn = data)
+  fetch("./texts/en.json")
+  .then(resp => resp.json())
+  .then((data) => {
+    dictionaryEn = data
+    
+    if (navigator.language.substring(0, 2).toLowerCase() != RU_LANG) {
+      changeLang(false)
+    }
+  })
 
-  if (navigator.language.substring(0, 2).toLowerCase() != RU_LANG) {
-    changeLang(false)
-  }
+  fetch("./texts/ru.json").then(resp => resp.json()).then(data => dictionaryRu = data)
 }
